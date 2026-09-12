@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHIOHUB - Find Real Jobs</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #172033;
+      color: white;
+      padding: 18px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 30px;
+    }
+
+    header p {
+      margin-top: 8px;
+      color: #d9e0ee;
+    }
+
+    .hero {
+      background: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .search {
+      max-width: 700px;
+      margin: 25px auto 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search input {
+      flex: 1;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 15px 22px;
+      background: #2563eb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .jobs {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .jobs h2 {
+      margin-bottom: 20px;
+    }
+
+    .job {
+      background: white;
+      margin-bottom: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .job h3 {
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+
+    .job p {
+      margin: 6px 0;
+      color: #555;
+    }
+
+    .job a {
+      display: inline-block;
+      margin-top: 12px;
+      text-decoration: none;
+      background: #16a34a;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 7px;
+    }
+
+    .about {
+      background: #172033;
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 650px;
+      margin: 12px auto;
+      line-height: 1.6;
+      color: #d9e0ee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0f172a;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .search {
+        flex-direction: column;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>CHIOHUB</h1>
+  <p>Find real job opportunities and online work</p>
+</header>
+
+<section class="hero">
+  <h2>Find Your Next Job</h2>
+  <p>
+    CHIOHUB helps you discover job opportunities and useful online work resources.
+  </p>
+
+  <div class="search">
+    <input
+      type="text"
+      id="jobSearch"
+      placeholder="Search jobs, e.g. Remote, Driver, Developer"
+    >
+    <button onclick="searchJobs()">Search</button>
+  </div>
+</section>
+
+<section class="jobs">
+  <h2>Featured Job Opportunities</h2>
+
+  <div id="jobList">
+
+    <div class="job">
+      <h3>Remote Customer Support</h3>
+      <p>🌍 Remote</p>
+      <p>Work online helping customers and answering questions.</p>
+      <a href="https://www.google.com/search?q=remote+customer+support+jobs" target="_blank">
+        Find Jobs
+      </a>
+    </div>
+
+    <div class="job">
+      <h3>Data Entry Jobs</h3>
+      <p>🌍 Remote</p>
+      <p>Find online data entry and administrative work.</p>
+      <a href="https://www.google.com/search?q=remote+data+entry+jobs" target="_blank">
+        Find Jobs
+      </a>
+    </div>
+
+    <div class="job">
+      <h3>Freelance Writing</h3>
+      <p>🌍 Online</p>
+      <p>Find opportunities for writers and content creators.</p>
+      <a href="https://www.google.com/search?q=freelance+writing+jobs" target="_blank">
+        Find Jobs
+      </a>
+    </div>
+
+    <div class="job">
+      <h3>Software Developer</h3>
+      <p>🌍 Remote / Worldwide</p>
+      <p>Explore software development opportunities.</p>
+      <a href="https://www.google.com/search?q=remote+software+developer+jobs" target="_blank">
+        Find Jobs
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <h2>About CHIOHUB</h2>
+  <p>
+    CHIOHUB is a platform designed to help people discover legitimate
+    employment opportunities and online work resources.
+  </p>
+</section>
+
+<footer>
+  © 2026 CHIOHUB. All rights reserved.
+</footer>
+
+<script>
+  function searchJobs() {
+    const search = document
+      .getElementById("jobSearch")
+      .value
+      .trim();
+
+    if (search === "") {
+      alert("Please enter a job to search for.");
+      return;
+    }
+
+    const url =
+      "https://www.google.com/search?q=" +
+      encodeURIComponent(search + " jobs");
+
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
